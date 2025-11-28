@@ -13,8 +13,8 @@ export default defineConfig({
 			},
 		},
 	},
-	site: "https://darckronny.github.io/evolution/",
-	base: "/evolution/",
+	site: "https://darckronny.github.io/evolution",
+	base: "evolution",
 	i18n: {
 		defaultLocale: "en",
 		locales: ["en", "it"],
