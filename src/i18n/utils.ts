@@ -1,4 +1,5 @@
 import { ui, defaultLang, showDefaultLang } from "./ui";
+const base = import.meta.env.BASE_URL;
 
 export function getLangFromUrl(url: URL) {
 	const [, lang] = url.pathname.split("/");
@@ -22,8 +23,19 @@ export function useTranslations(lang: keyof typeof ui) {
 	};
 }
 
+// export function useTranslatedPath(lang: keyof typeof ui) {
+// 	return function translatePath(path: string, l: string = lang) {
+// 		return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`;
+// 	};
+// }
+
+
 export function useTranslatedPath(lang: keyof typeof ui) {
-	return function translatePath(path: string, l: string = lang) {
-		return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`;
-	};
+    return function translatePath(path: string, l: string = lang) {
+        const langPrefix =
+            !showDefaultLang && l === defaultLang ? "" : `/${l}`;
+
+        // BASE_URL siempre termina con "/"
+        return `${base.replace(/\/$/, "")}${langPrefix}${path}`;
+    };
 }
