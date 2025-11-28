@@ -13,7 +13,8 @@ export default defineConfig({
 			},
 		},
 	},
-	site: "https://majestico.co",
+	site: "https://darckronny.github.io/evolutionTest/",
+	base: "/evolutionTest/",
 	i18n: {
 		defaultLocale: "en",
 		locales: ["en", "it"],
