@@ -82,7 +82,7 @@ const allProjects = (await getCollection("projects"))
 					image={project.data.image?.source}
 					video={project.data.video}
 					project={project.data.title}
-					link={`/evolution/work/${project.slug}`}
+					link={`/work/${project.slug}`}
 					class:list={[
 						possiblePositions[index]
 							? `col-span-full col-start-1 translate-y-40 md:col-span-2 md:translate-y-${possiblePositions[index].translateY} md:col-start-${possiblePositions[index].column} md:row-start-${possiblePositions[index].row}`
