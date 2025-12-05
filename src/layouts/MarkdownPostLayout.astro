@@ -62,7 +62,8 @@ const readingTime = getArticleReadingTime(body);
 					frontmatter.data.image != null ? (
 						<Image class="mt-12" src={frontmatter.data.image?.source} alt={frontmatter.data.image.alt} />
 					) : frontmatter.data.video ? (
-						<video src={frontmatter.data.video} loop muted playsinline autoplay />
+						// url cambiado-base
+						<video src={`/evolution/${frontmatter.data.video}`} loop muted playsinline autoplay />
 					) : (
 						<div>{frontmatter.data.title}</div>
 					)
